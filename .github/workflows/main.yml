@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Check out the repository contents
       - uses: actions/checkout@v4
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -26,5 +25,4 @@ jobs:
           fi
 
       - name: Run unit Tests
-        working-directory: python-unit-test
         run: pytest -v
