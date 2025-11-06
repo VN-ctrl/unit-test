@@ -1,23 +1,22 @@
-name: Python Unit Tests
+name: Unit Tests
 
 on:
   push:
   pull_request:
-
+  
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-s
+      # Step 1: Check out the repository contents
       - uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Install dependencies
+      - name: Install Dependecies
         working-directory: python-unit-test
         run: |
           python -m pip install --upgrade pip
@@ -26,7 +25,7 @@ s
           else
             pip install pytest
           fi
-      # Step 4: Run pytest with verbose output
-      - name: Run unit tests
+
+      - name: Runit unit Tests
         working-directory: python-unit-test
         run: pytest -v
